@@ -80,12 +80,17 @@ const GlobalStyle = createGlobalStyle`
     font-display: swap;
   } 
 
+  @font-face {
+    font-family: 'testFont';
+    src: local('../asset/fonts/Unbounded-SemiBold.ttf' format('ttf'));
+    font-weight: 700;
+    font-display: swap;
+  } 
+
   body {
-    font-family: 'AppleSDGothicNeo';
-    font-weight: 600;
+    font-family: 'testFont';
     line-height: 1.5;
   }
-
 `;
 
 export default GlobalStyle;
