@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: 'testFont';
-    src: local('../asset/fonts/Unbounded-SemiBold.ttf' format('ttf'));
+    src: url('../asset/fonts/Unbounded-SemiBold.ttf');
     font-weight: 700;
     font-display: swap;
   } 
