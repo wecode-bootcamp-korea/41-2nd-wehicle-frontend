@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "img1": "/images/main/brand/hyundai.png",
+    "img2": "/images/main/brand/hyundai_bg.jpg",
+    "alt": "현대"
+  },
+  {
+    "id": 2,
+    "img1": "/images/main/brand/kia.png",
+    "img2": "/images/main/brand/kia_bg.jpg",
+    "alt": "기아"
+  },
+  {
+    "id": 3,
+    "img1": "/images/main/brand/bmw.png",
+    "img2": "/images/main/brand/bmw_bg.jpg",
+    "alt": "BMW"
+  },
+  {
+    "id": 4,
+    "img1": "/images/main/brand/benz.png",
+    "img2": "/images/main/brand/benz_bg.jpg",
+    "alt": "벤츠"
+  },
+  {
+    "id": 5,
+    "img1": "/images/main/brand/audi.png",
+    "img2": "/images/main/brand/audi_bg.jpg",
+    "alt": "아우디"
+  }
+]
