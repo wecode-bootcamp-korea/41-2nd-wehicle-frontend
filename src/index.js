@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import theme from './styles/theme';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
-import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './router';
 
