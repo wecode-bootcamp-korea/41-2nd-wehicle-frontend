@@ -46,5 +46,3 @@ const BrandContainer = styled.div`
   justify-content: space-around;
   text-align: center;
 `;
-
-export default Main;
