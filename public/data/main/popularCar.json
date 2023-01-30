@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "img": "/images/main/popularCar/popularCar_01.jpg",
+    "brand": "Hyundai",
+    "kind": "Wrangler"
+  },
+  {
+    "id": 2,
+    "img": "/images/main/popularCar/popularCar_01.jpg",
+    "brand": "Audi",
+    "kind": "Wrangler"
+  },
+  {
+    "id": 3,
+    "img": "/images/main/popularCar/popularCar_01.jpg",
+    "brand": "Benz",
+    "kind": "Wrangler"
+  },
+  {
+    "id": 4,
+    "img": "/images/main/popularCar/popularCar_01.jpg",
+    "brand": "Kia",
+    "kind": "Wrangler"
+  }
+]
