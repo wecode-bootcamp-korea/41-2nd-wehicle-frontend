@@ -128,7 +128,6 @@ const FooterBottom = styled.div`
 
 const FooterBottomLeft = styled.div`
   width: 600px;
-  height: 400px;
   margin-top: 80px;
   color: #fff;
 `;
@@ -159,7 +158,6 @@ const LeftDescription = styled.p`
 
 const FooterBottomRight = styled.div`
   width: 400px;
-  height: 400px;
   text-align: left;
   margin-top: 190px;
 `;
