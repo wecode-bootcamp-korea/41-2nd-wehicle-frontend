@@ -12,14 +12,17 @@ export default function Products() {
   const oil = searchParams.get('oil');
   const type = searchParams.get('type');
   const size = searchParams.get('size');
+  const keyword = searchParams.get('keyword');
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(
-      `${BASE_URL}products/?offset=${offset}&limit=${limit}&oil=${
+      `${BASE_URL}products/?offset=${offset || 8}&limit=${limit || 8}&oil=${
         oil || ''
-      }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}`
+      }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}&keyword=${
+        keyword || ''
+      }`
     )
       .then(res => res.json())
       .then(data => setProducts([...products, ...data.data]));
@@ -27,13 +30,22 @@ export default function Products() {
 
   useEffect(() => {
     fetch(
-      `${BASE_URL}products/?offset=${offset}&limit=${limit}&oil=${
+      `${BASE_URL}products/?offset=${offset || 8}&limit=${limit || 8}&oil=${
         oil || ''
-      }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}`
+      }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}&keyword=${
+        keyword || ''
+      }`
     )
       .then(res => res.json())
       .then(data => setProducts([...data.data]));
-  }, [brandId, oil, type, size]);
+  }, [brandId, oil, type, size, keyword]);
+
+  //--목데이터 통신 로직--
+  // useEffect(() => {
+  //   fetch(`./data/productList.json?offset=${offset}&limit=${limit}`)
+  //     .then(res => res.json())
+  //     .then(data => setProducts(data));
+  // }, [offset, limit]);
 
   const loadMore = () => {
     setLimit(8);
