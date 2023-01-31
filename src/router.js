@@ -6,6 +6,7 @@ import Main from './pages/main/Main';
 import NotFound from './pages/notFound/NotFound';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import ProductList from './pages/productList/ProductList';
+import KakaoRedirect from './pages/login/KakaoRedirect';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Main /> },
       { path: '/login', element: <Login /> },
+      { path: '/auth/kakao/callback', element: <KakaoRedirect /> },
       { path: '/productDetail', element: <ProductDetail /> },
       { path: '/productList', element: <ProductList /> },
     ],
