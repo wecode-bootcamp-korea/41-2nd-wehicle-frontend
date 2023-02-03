@@ -7,7 +7,6 @@ import NotFound from './pages/notFound/NotFound';
 import ProductDetail from './pages/productDetail/ProductDetail';
 import ProductList from './pages/productList/ProductList';
 import KakaoRedirect from './pages/login/KakaoRedirect';
-import BidModal from './pages/productDetail/bidModal/BidModal';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +19,6 @@ const router = createBrowserRouter([
       { path: '/auth/kakao/callback', element: <KakaoRedirect /> },
       { path: '/productDetail', element: <ProductDetail /> },
       { path: '/productList', element: <ProductList /> },
-      { path: '/bidModal', element: <BidModal /> },
     ],
   },
 ]);
