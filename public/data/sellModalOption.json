@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "option": "열선시트",
+    "name": "heatingseat"
+  },
+  {
+    "id": 2,
+    "option": "후방카메라",
+    "name": "backcamera"
+  },
+  {
+    "id": 3,
+    "option": "내비게이션",
+    "name": "navi"
+  },
+  {
+    "id": 4,
+    "option": "통풍시트",
+    "name": "coolingseat"
+  },
+  {
+    "id": 5,
+    "option": "가죽시트",
+    "name": "leatherseat"
+  },
+  {
+    "id": 6,
+    "option": "히팅핸들",
+    "name": "smartkey"
+  },
+  {
+    "id": 7,
+    "option": "썬루프",
+    "name": "sunroof"
+  },
+  {
+    "id": 8,
+    "option": "주차감지센터",
+    "name": "parkingsensor"
+  }
+]
