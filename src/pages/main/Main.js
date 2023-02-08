@@ -47,4 +47,5 @@ const BrandContainer = styled.div`
   text-align: center;
 `;
 
+
 export default Main;

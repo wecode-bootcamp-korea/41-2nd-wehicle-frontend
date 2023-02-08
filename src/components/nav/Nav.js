@@ -18,6 +18,8 @@ const Nav = () => {
     setShowSellModal(false);
   };
 
+
+
   return (
     <NavBox>
       <NavTop>
@@ -102,7 +104,6 @@ const NavMainItem = styled.div`
   display: flex;
   font-size: 18px;
   margin-right: 50px;
-
   cursor: pointer;
   a {
     color: #222;
