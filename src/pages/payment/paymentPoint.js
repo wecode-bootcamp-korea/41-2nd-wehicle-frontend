@@ -14,7 +14,6 @@ const PaymentPoint = () => {
   const [point, setPoint] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const deliveryDate = moment(startDate).format('YYYY-MM-DD');
-  // git test
 
   const showModal = () => {
     setIsModalOpen(!isModalOpen);
