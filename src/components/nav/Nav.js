@@ -42,7 +42,9 @@ const Nav = () => {
           <NavMainItem>
             <Link to="/productList">SHOP</Link>
           </NavMainItem>
-          <NavMainItem>MY</NavMainItem>
+          <NavMainItem>
+            <Link to="/mypage">MY</Link>
+          </NavMainItem>
           <NavMainItem onClick={() => setShowSellModal(true)}>
             바로판매
           </NavMainItem>
