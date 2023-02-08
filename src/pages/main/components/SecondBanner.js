@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function SecondBanner() {
+export default function SecondBanner() {
   return (
     <SecondBannerBox>
       <SecondBannerImg
@@ -12,11 +12,9 @@ function SecondBanner() {
   );
 }
 
-export default SecondBanner;
-
 const SecondBannerBox = styled.div`
   width: 100vw;
-  height: 600px;
+  height: 592px;
   overflow: hidden;
 `;
 

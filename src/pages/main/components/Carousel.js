@@ -29,19 +29,19 @@ export default function Carousel() {
 
   return (
     <CarouselBox>
-      <ArrowLeftBtn onClick={showPrevImg}>
+      <LeftBtn onClick={showPrevImg}>
         <IoIosArrowBack />
-      </ArrowLeftBtn>
-      <CarouselImgBox ref={imageBox}>
+      </LeftBtn>
+      <ImgBox ref={imageBox}>
         {carouselImg.map(data => (
-          <CarouselContent key={data.id}>
+          <Content key={data.id}>
             <ContentImg src={data.img} alt={data.alt} />
-          </CarouselContent>
+          </Content>
         ))}
-      </CarouselImgBox>
-      <ArrowRightBtn onClick={showNextImg}>
+      </ImgBox>
+      <RightBtn onClick={showNextImg}>
         <IoIosArrowForward />
-      </ArrowRightBtn>
+      </RightBtn>
     </CarouselBox>
   );
 }
@@ -54,30 +54,30 @@ const CarouselBox = styled.div`
 
 const ArrowBtn = styled.div`
   position: absolute;
-  top: 36%;
+  top: 47%;
   cursor: pointer;
 `;
 
-const ArrowLeftBtn = styled(ArrowBtn)`
+const RightBtn = styled(ArrowBtn)`
+  right: 30px;
+  font-size: 70px;
+  color: rgba(255, 255, 255, 0.7);
+`;
+
+const LeftBtn = styled(ArrowBtn)`
   left: 30px;
   font-size: 70px;
   color: rgba(255, 255, 255, 0.7);
   z-index: 1;
 `;
 
-const ArrowRightBtn = styled(ArrowBtn)`
-  right: 30px;
-  font-size: 70px;
-  color: rgba(255, 255, 255, 0.7);
-`;
-
-const CarouselImgBox = styled.div`
+const ImgBox = styled.div`
   display: flex;
   width: 400vw;
   transition: all 0.5s ease-in-out;
 `;
 
-const CarouselContent = styled.div`
+const Content = styled.div`
   width: 100vw;
 `;
 

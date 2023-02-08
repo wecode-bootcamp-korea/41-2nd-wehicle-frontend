@@ -10,7 +10,7 @@ function WhatsNewCar() {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
-    fetch(`${BASE_URL}/cars?limit=${limit}`)
+    fetch(`${BASE_URL}cars?limit=${limit}`)
       .then(res => res.json())
       .then(data => {
         setWhatsNewList(data.data);
@@ -20,7 +20,7 @@ function WhatsNewCar() {
   const handleMoreBtn = () => {
     setOffset(offset + limit);
 
-    fetch(`${BASE_URL}/cars?offset=${offset + limit}&limit=${limit}`)
+    fetch(`${BASE_URL}cars?offset=${offset + limit}&limit=${limit}`)
       .then(res => res.json())
       .then(data => {
         setWhatsNewList(prev => [...prev, ...data.data]);
@@ -104,6 +104,7 @@ const ContentPicImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+  cursor: pointer;
 `;
 
 const ContentTxt = styled.div`

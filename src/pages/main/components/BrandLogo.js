@@ -1,35 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function BrandLogo({ data }) {
   const { id, img1, img2, alt } = data;
   const navigate = useNavigate();
-  const [isMouseOver, setIsMouseOver] = useState(false);
 
   const carBrandQuery = id => {
     navigate(`/products?brand=${id}`);
   };
 
   return (
-    <BrandLogoBox
-      onMouseOver={() => {
-        setIsMouseOver(true);
-      }}
-      onMouseLeave={() => {
-        setIsMouseOver(false);
-      }}
-      onClick={() => carBrandQuery(id)}
-      key={id}
-    >
+    <BrandLogoBox onClick={() => carBrandQuery(id)} key={id}>
       <Logo>
         <LogoImg src={img1} alt={alt} />
-        <LogoBG
-          src={img2}
-          alt={alt}
-          isMouseOver={isMouseOver}
-          setIsMouseOver={setIsMouseOver}
-        />
+        <LogoBG src={img2} alt={alt} />
       </Logo>
       <BrandName>{alt}</BrandName>
     </BrandLogoBox>
@@ -62,11 +47,14 @@ const LogoImg = styled.img`
 `;
 
 const LogoBG = styled.img`
-  display: ${props => (props.isMouseOver ? 'block' : 'none')};
+  display: none;
   width: 100%;
   height: 100%;
   border-radius: 20px;
   opacity: 0.3;
+  ${BrandLogoBox}:hover & {
+    display: block;
+  }
 `;
 
 const BrandName = styled.span`
@@ -78,5 +66,3 @@ const BrandName = styled.span`
   font-size: 18px;
   font-weight: 400;
 `;
-
-// ===== Brand Styled
