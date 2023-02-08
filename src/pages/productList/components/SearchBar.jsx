@@ -14,7 +14,7 @@ export default function SearchBar() {
     setSearchParams(searchParams);
   };
   const handleClear = () => {
-    searchParams.set('keyword', '');
+    searchParams.delete('keyword');
     setSearchParams(searchParams);
     setSearchInput('');
   };
@@ -26,7 +26,7 @@ export default function SearchBar() {
         value={searchInput}
         onChange={handleChangeInput}
       />
-      <SearchClearBtn type="button" onClick={() => handleClear()}>
+      <SearchClearBtn type="button" onClick={handleClear}>
         x
       </SearchClearBtn>
     </SubmitForm>

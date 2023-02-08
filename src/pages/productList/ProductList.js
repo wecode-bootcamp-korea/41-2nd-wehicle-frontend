@@ -53,7 +53,7 @@ function ProductList() {
   };
   const handleOption = option => {
     if (selectOption.includes(option)) {
-      setSelectOption([...selectOption.filter(option => option !== option)]);
+      setSelectOption([selectOption.filter(option => option !== option)]);
     } else {
       setSelectOption(prev => [...prev, option]);
     }

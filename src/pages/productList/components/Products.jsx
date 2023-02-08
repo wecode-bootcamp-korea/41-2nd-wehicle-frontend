@@ -40,13 +40,6 @@ export default function Products() {
       .then(data => setProducts([...data.data]));
   }, [brandId, oil, type, size, keyword]);
 
-  //--목데이터 통신 로직--
-  // useEffect(() => {
-  //   fetch(`./data/productList.json?offset=${offset}&limit=${limit}`)
-  //     .then(res => res.json())
-  //     .then(data => setProducts(data));
-  // }, [offset, limit]);
-
   const loadMore = () => {
     setLimit(8);
     setOffset(offset + 8);
