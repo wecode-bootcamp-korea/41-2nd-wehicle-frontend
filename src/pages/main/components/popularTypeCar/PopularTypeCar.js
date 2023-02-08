@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PopularTypeCarContent from './PopularTypeCarContent';
 
-function PopularTypeCar() {
+export default function PopularTypeCar() {
   const [currentTab, setCurrentTab] = useState('Sedan');
   const [typeProduct, setTypeProduct] = useState([]);
   const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -13,7 +13,7 @@ function PopularTypeCar() {
 
   useEffect(() => {
     fetch(
-      `${BASE_URL}/cars?type=${currentTab === 'Sedan' ? 1 : 2}&offset=0&limit=6`
+      `${BASE_URL}cars?type=${currentTab === 'Sedan' ? 1 : 2}&offset=0&limit=6`
     )
       .then(res => res.json())
       .then(data => {
@@ -41,8 +41,6 @@ function PopularTypeCar() {
   );
 }
 
-export default PopularTypeCar;
-
 const PopularTypeCarBox = styled.div`
   display: block;
   margin: 110px 100px 110px;
@@ -64,14 +62,12 @@ const BtnSuv = styled.button`
   width: 150px;
   padding: 10px;
   border: none;
+  border-bottom: ${props => (props.title === 'SUV' ? '4px solid #222' : '')};
   background: #fff;
-
-  text-align: center;
   font-size: 24px;
   font-weight: 500;
-
+  text-align: center;
   cursor: pointer;
-  border-bottom: ${props => (props.title === 'SUV' ? '4px solid #222' : '')};
 `;
 
 const BtnSedan = styled.button`
@@ -79,14 +75,12 @@ const BtnSedan = styled.button`
   width: 150px;
   padding: 10px;
   border: none;
+  border-bottom: ${props => (props.title === 'Sedan' ? '4px solid #222' : '')};
   background: #fff;
-
-  text-align: center;
   font-size: 24px;
   font-weight: 500;
-
+  text-align: center;
   cursor: pointer;
-  border-bottom: ${props => (props.title === 'Sedan' ? '4px solid #222' : '')};
 `;
 
 const PopularTypeCarContainer = styled.div`
@@ -94,6 +88,5 @@ const PopularTypeCarContainer = styled.div`
   grid-template-columns: repeat(3, 400px);
   column-gap: 30px;
   justify-content: center;
-
   padding: 40px 0;
 `;
