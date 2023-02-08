@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import FilterBtn from '../../components/button/FilterBtn';
 import BrandNav from './components/BrandNav';
@@ -15,6 +15,7 @@ import Size from './components/Size';
 import OilType from './components/OilType';
 import Options from './components/Options';
 import CarStyle from './components/CarStyle';
+import SearchBar from './components/SearchBar';
 
 function ProductList() {
   const [selectSize, setSelectSize] = useState({});
@@ -52,7 +53,7 @@ function ProductList() {
   };
   const handleOption = option => {
     if (selectOption.includes(option)) {
-      setSelectOption(selectOption.filter(option => option !== option));
+      setSelectOption([selectOption.filter(option => option !== option)]);
     } else {
       setSelectOption(prev => [...prev, option]);
     }
@@ -61,6 +62,9 @@ function ProductList() {
   return (
     <ProductListWrapper>
       <PageTitle>SHOP</PageTitle>
+      <SearchBarBox>
+        <SearchBar />
+      </SearchBarBox>
       <BrandNav />
       <SlideBarImage
         src="./images/productListPage/slidebar.png"
@@ -107,6 +111,13 @@ function ProductList() {
 
 export default ProductList;
 
+const SearchBarBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+`;
 const GoUpBtn = styled.button`
   position: fixed;
   bottom: 24px;
