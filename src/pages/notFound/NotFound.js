@@ -34,4 +34,3 @@ const NotFoundTxt = styled.h1`
   font-size: 28px;
   color: #666;
 `;
-

@@ -25,7 +25,7 @@ const PaymentPoint = () => {
     fetch(`${BASE_URL}products/50`)
       .then(res => res.json())
       .then(data => {
-        setProduct(data);
+        setProduct(data.data);
       });
   }, []);
 
@@ -46,7 +46,6 @@ const PaymentPoint = () => {
     }
   };
 
-  //Authorization: localStorage.getItem('accessToken'),
   useEffect(() => {
     fetch(`${BASE_URL}orders`, {
       method: 'GET',
@@ -84,20 +83,20 @@ const PaymentPoint = () => {
 
   const myPoint = Math.floor(point.points);
   const totalPrice = Math.floor(
-    (myPoint - Math.floor(product.data?.productDetail.sellingPrice)) * 1.015
+    (myPoint - Math.floor(product?.productDetail.sellingPrice)) * 1.015
   );
   return (
     <Content>
       <Box>
         <ProductBox>
-          <ProductImg src={product.data?.productDetail.thumbnail} />
+          <ProductImg src={product?.productDetail.thumbnail} />
           <ProductInfo>
-            <ProductBrand>{product.data?.productDetail.brandName}</ProductBrand>
-            <ProductName>{product.data?.productDetail.carName}</ProductName>
+            <ProductBrand>{product?.productDetail.brandName}</ProductBrand>
+            <ProductName>{product?.productDetail.carName}</ProductName>
             <ProductMile>
-              주행거리: {product.data?.productDetail.mileage}
+              주행거리: {product?.productDetail.mileage}
             </ProductMile>
-            <ProductYear>연식: {product.data?.productDetail.year}</ProductYear>
+            <ProductYear>연식: {product?.productDetail.year}</ProductYear>
           </ProductInfo>
         </ProductBox>
       </Box>
