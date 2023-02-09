@@ -60,6 +60,7 @@ const PaymentPoint = () => {
       });
   }, []);
 
+  if (!product) return <></>;
   const orderBtn = () => {
     fetch(`${BASE_URL}users/`, {
       method: 'POST',
@@ -137,9 +138,9 @@ const PaymentPoint = () => {
           <DetailBox>
             <div>즉시 구매가</div>
             <div>
-              {Math.floor(product?.productDetail.sellingPrice).toLocaleString(
-                'ko-KR'
-              )}
+              {Math.floor(
+                product.data?.productDetail.sellingPrice
+              ).toLocaleString('ko-KR')}
               원
             </div>
           </DetailBox>
