@@ -25,7 +25,9 @@ const Nav = () => {
         <NavTopItem>관심상품</NavTopItem>
         <NavTopItem>
           {isValidToken ? (
-            <NavTopItem onClick={handleLogout}>로그아웃</NavTopItem>
+            <NavTopItem onClick={handleLogout}>
+              <Link to="/">로그아웃</Link>
+            </NavTopItem>
           ) : (
             <Link to="/login">로그인</Link>
           )}
@@ -42,9 +44,7 @@ const Nav = () => {
           <NavMainItem>
             <Link to="/productList">SHOP</Link>
           </NavMainItem>
-          <NavMainItem>
-            <Link to="/mypage">MY</Link>
-          </NavMainItem>
+          <NavMainItem>MY</NavMainItem>
           <NavMainItem onClick={() => setShowSellModal(true)}>
             바로판매
           </NavMainItem>
@@ -69,13 +69,13 @@ const NavBox = styled.nav`
 const NavTop = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 8px 40px 0;
-  height: 22px;
+  padding: 20px 40px 0;
+  height: 40px;
 `;
 
 const NavTopItem = styled.div`
   display: flex;
-  font-size: 13px;
+  font-size: 15px;
   margin-left: 24px;
   cursor: pointer;
   a {
@@ -87,23 +87,26 @@ const NavMain = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
-  height: 68px;
+  padding: 0px 40px 0 60px;
+  height: 70px;
 `;
 
 const LogoImg = styled.img`
-  width: 150px;
+  position: absolute;
+  left: 60px;
+  top: 42px;
+  width: 8%;
 `;
 
 const NavMainList = styled.div`
+  width: 90%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 `;
 
 const NavMainItem = styled.div`
-  display: flex;
-  font-size: 18px;
+  font-size: 20px;
   margin-right: 50px;
 
   cursor: pointer;

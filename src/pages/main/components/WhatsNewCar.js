@@ -28,7 +28,7 @@ function WhatsNewCar() {
   };
 
   const toDetailPage = id => {
-    navigate(`/products/productId/${id}`);
+    navigate(`/productDetail/${id}`);
   };
 
   return (
