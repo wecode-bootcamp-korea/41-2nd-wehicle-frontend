@@ -15,8 +15,8 @@ const Chart = ({ carChartData }) => (
       xFormat="time:%Y/%m/%d"
       yScale={{
         type: 'linear',
-        min: 0,
-        max: 'auto',
+        min: '38000000',
+        max: '50000000',
         stacked: true,
         reverse: false,
       }}
