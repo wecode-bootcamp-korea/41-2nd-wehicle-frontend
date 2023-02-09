@@ -210,7 +210,6 @@ const TitleDetail = styled.p`
   letter-spacing: 0.9px;
   font-weight: 400;
 `;
-
 const DetailBox = styled.div`
   display: flex;
   align-items: center;
@@ -228,7 +227,6 @@ const DetailMile = styled.span`
 const Verify = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 40px;
   height: 50px;
   font-size: 50px;
 `;

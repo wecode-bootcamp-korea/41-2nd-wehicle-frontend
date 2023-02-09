@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Calender from './Calender';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -14,6 +15,7 @@ const PaymentPoint = () => {
   const [point, setPoint] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const deliveryDate = moment(startDate).format('YYYY-MM-DD');
+  const navigate = useNavigate();
 
   const showModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -22,10 +24,10 @@ const PaymentPoint = () => {
     setStartDate(date);
   };
   useEffect(() => {
-    fetch(`${BASE_URL}products/50`)
+    fetch(`${BASE_URL}products/104`)
       .then(res => res.json())
       .then(data => {
-        setProduct(data.data);
+        setProduct(data);
       });
   }, []);
 
@@ -61,7 +63,7 @@ const PaymentPoint = () => {
   }, []);
 
   const orderBtn = () => {
-    fetch(`${BASE_URL}users/`, {
+    fetch(`${BASE_URL}orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -77,25 +79,26 @@ const PaymentPoint = () => {
       .then(res => res.json())
       .then(data => {
         alert('주문이 완료되었습니다.');
+        navigate('/');
       });
   };
 
   const myPoint = Math.floor(point.points);
-  const totalPrice = Math.floor(
-    (myPoint - Math.floor(product?.productDetail.sellingPrice)) * 1.015
-  );
+  const totalPrice =
+    Math.floor(myPoint - Math.floor(product.data?.productDetail.sellingPrice)) *
+    1.015;
   return (
     <Content>
       <Box>
         <ProductBox>
-          <ProductImg src={product?.productDetail.thumbnail} />
+          <ProductImg src={product.data?.productDetail.thumbnail} />
           <ProductInfo>
-            <ProductBrand>{product?.productDetail.brandName}</ProductBrand>
-            <ProductName>{product?.productDetail.carName}</ProductName>
+            <ProductBrand>{product.data?.productDetail.brandName}</ProductBrand>
+            <ProductName>{product.data?.productDetail.carName}</ProductName>
             <ProductMile>
-              주행거리: {product?.productDetail.mileage}
+              주행거리: {product.data?.productDetail.mileage}
             </ProductMile>
-            <ProductYear>연식: {product?.productDetail.year}</ProductYear>
+            <ProductYear>연식: {product.data?.productDetail.year}</ProductYear>
           </ProductInfo>
         </ProductBox>
       </Box>
@@ -131,15 +134,15 @@ const PaymentPoint = () => {
         <Title>최종 주문 정보</Title>
         <PriceBox>
           <div>총 결제금액</div>
-          <Price>{totalPrice}원</Price>
+          <Price>{totalPrice.toLocaleString('ko-KR')}원</Price>
         </PriceBox>
         <PriceDetail>
           <DetailBox>
             <div>즉시 구매가</div>
             <div>
-              {Math.floor(product?.productDetail.sellingPrice).toLocaleString(
-                'ko-KR'
-              )}
+              {Math.floor(
+                product.data?.productDetail.sellingPrice
+              ).toLocaleString('ko-KR')}
               원
             </div>
           </DetailBox>
