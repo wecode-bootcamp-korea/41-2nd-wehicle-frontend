@@ -129,12 +129,14 @@ const More = styled.div`
 `;
 
 const MoreBtn = styled.button`
-  padding: 17px 27px 15px;
+  width: 100px;
+  height: 35px;
+  margin: 20px 0 0;
+  padding-top: 3px;
   border: 1px solid #222;
-  border-radius: 10px;
-  background: #fff;
+  background: none;
+  border-radius: 20px;
   font-size: 16px;
-  color: #222;
   cursor: pointer;
 
   &:hover {

@@ -87,18 +87,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin-top: 30px;
 `;
 
 const LoadMoreBox = styled.div`
   display: flexbox;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const LoadMore = styled.button`
   width: 100px;
   height: 35px;
   margin: 40px 0;
+  padding-top: 3px;
   border: 1px solid #222;
   background: none;
   border-radius: 20px;
@@ -128,16 +131,17 @@ const ProductCard = styled.li`
 const ProductCardImage = styled.img`
   width: 230px;
   height: 230px;
-  border-radius: 10px;
 `;
 const ProductBrandText = styled.p`
   font-weight: bold;
+  margin-top: 16px;
 `;
 const ProductDetailText = styled.p`
-  font-size: 13px;
+  font-size: 14px;
+  margin-bottom: 5px;
 `;
 const ProductPriceText = styled.p`
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 12px;
 `;

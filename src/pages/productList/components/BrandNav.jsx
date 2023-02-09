@@ -38,7 +38,7 @@ const BrandCardContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #c2c2c2;
+  margin-bottom: 10px;
 `;
 const BrandCardImages = styled.img`
   width: 60px;

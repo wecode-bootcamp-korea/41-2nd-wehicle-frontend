@@ -21,37 +21,53 @@ export default function SearchBar() {
 
   return (
     <SubmitForm onSubmit={handleSubmit}>
-      <SearchBarInput
-        type="text"
-        value={searchInput}
-        onChange={handleChangeInput}
-      />
-      <SearchClearBtn type="button" onClick={handleClear}>
-        x
-      </SearchClearBtn>
+      <SearchClearBtnBox>
+        <SearchClearBtn type="button" onClick={handleClear}>
+          x
+        </SearchClearBtn>
+        <SearchBarInput
+          type="text"
+          value={searchInput}
+          onChange={handleChangeInput}
+        />
+      </SearchClearBtnBox>
     </SubmitForm>
   );
 }
-const SubmitForm = styled.form``;
+const SubmitForm = styled.form`
+  margin-bottom: 30px;
+`;
 
 const SearchBarInput = styled.input.attrs({
-  placeholder: '상품 이름을 입력 해 주세요.',
+  placeholder: '상품 이름을 입력해 주세요',
 })`
   max-width: 720px;
   width: 600px;
   height: 50px;
+  padding: 0 15px;
+  border: none;
   border-bottom: 3px solid black;
-  border-top: none;
-  border-right: none;
-  border-left: none;
   margin-bottom: 15px;
   &:focus {
     outline: none;
   }
+  &::placeholder {
+    font-size: 18px;
+    color: #999;
+  }
 `;
+
+const SearchClearBtnBox = styled.div`
+  position: relative;
+`;
+
 const SearchClearBtn = styled.button`
-  border-radius: 100%;
-  width: 15px;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   border: none;
-  background-color: #dedede;
+  font-size: 16px;
 `;
