@@ -16,6 +16,7 @@ import OilType from './components/OilType';
 import Options from './components/Options';
 import CarStyle from './components/CarStyle';
 import SearchBar from './components/SearchBar';
+import ProductSlider from './components/ProductSlider';
 
 function ProductList() {
   const [selectSize, setSelectSize] = useState({});
@@ -66,10 +67,7 @@ function ProductList() {
         <SearchBar />
       </SearchBarBox>
       <BrandNav />
-      <SlideBarImage
-        src="./images/productListPage/slidebar.png"
-        alt="slidebarImage"
-      />
+      <ProductSlider />
       <ContentTop>
         <FilterBtn />
         <PopularOrder>
