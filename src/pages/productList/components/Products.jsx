@@ -56,7 +56,7 @@ export default function Products() {
             <ProductCard
               key={product.id}
               onClick={() => {
-                navigate(`/products/productId/${product.carId}`);
+                navigate(`/productDetail/104`);
               }}
             >
               <ProductCardImage

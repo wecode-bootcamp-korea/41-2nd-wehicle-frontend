@@ -46,12 +46,12 @@ export const OPTION_CATEGORY = {
   subTitle: '모든 옵션',
   categoryList: [
     { id: 1, query: 'sunroof', name: '선루프' },
-    { id: 2, query: 'parkingSensor', name: '주차센서' },
-    { id: 3, query: 'backCamera', name: '후방카메라' },
+    { id: 2, query: 'parkingsensor', name: '주차센서' },
+    { id: 3, query: 'backcamera', name: '후방카메라' },
     { id: 4, query: 'navi', name: '네비게이션' },
-    { id: 5, query: 'heatingSeat', name: '열선시트' },
-    { id: 6, query: 'coolingSeat', name: '통풍시트' },
-    { id: 7, query: 'smartKey', name: '스마트키' },
-    { id: 8, query: 'leatherSeat', name: '가죽시트' },
+    { id: 5, query: 'heatingseat', name: '열선시트' },
+    { id: 6, query: 'coolingseat', name: '통풍시트' },
+    { id: 7, query: 'smartkey', name: '스마트키' },
+    { id: 8, query: 'leatherseat', name: '가죽시트' },
   ],
 };
