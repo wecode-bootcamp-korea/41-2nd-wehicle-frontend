@@ -26,7 +26,7 @@ export default function ProductSlider() {
       <StyledSlider {...settings}>
         {images.map(image => {
           return (
-            <SliderBox>
+            <SliderBox key={image.id}>
               <SliderContent src={image.url} />
             </SliderBox>
           );
