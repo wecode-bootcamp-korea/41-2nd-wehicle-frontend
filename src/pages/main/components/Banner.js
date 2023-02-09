@@ -19,4 +19,5 @@ const BannerBox = styled.div`
 
 const BannerImg = styled.img`
   width: 100%;
+  translate: 0 -70px;
 `;

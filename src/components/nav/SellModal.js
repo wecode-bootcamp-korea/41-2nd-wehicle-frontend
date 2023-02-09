@@ -5,15 +5,16 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CarOptionList from './components/CarOptionList';
 import SelectBoxes from './components/SelectBoxes';
 import CarsInfoInput from './components/CarsInfoInput';
+import { useNavigate } from 'react-router-dom';
 
 export default function SellModal() {
+  const navigate = useNavigate();
   const phoneNumRef = useRef();
   const [option, setOption] = useState([]);
   const [fileImg, setFileImg] = useState('');
   const [startDate, setStartDate] = useState(new Date());
-  const [phoneNum, setPhoneNum] = useState('');
   const priceRef = useRef();
-  // price, phoneNumber,
+
   const [arr, setArr] = useState({
     price: '', // price
     carId: '',
@@ -76,8 +77,6 @@ export default function SellModal() {
     // console.log(arr.price);
   };
 
-  console.log(arr);
-
   const CustomDatePicker = forwardRef(({ value, onClick }, ref) => (
     <button className="customDataPicker" onClick={onClick} ref={ref}>
       {value}
@@ -104,6 +103,7 @@ export default function SellModal() {
 
   const alertByBuyBtn = () => {
     alert('판매가 정상적으로 등록되었습니다.');
+    navigate('/');
   };
 
   return (
@@ -238,8 +238,9 @@ const SellModalBox = styled.div`
   width: 600px;
   height: 1400px;
   margin: 50px auto;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
   color: #222;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h1`
