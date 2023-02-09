@@ -10,7 +10,7 @@ const Nav = () => {
   const isValidToken = localStorage.getItem('accessToken');
 
   const handleLogout = () => {
-    localStorage.remove('accessToken');
+    localStorage.removeItem('accessToken');
     window.location.replace('/');
   };
 
@@ -46,6 +46,7 @@ const Nav = () => {
           <NavMainItem onClick={() => setShowSellModal(true)}>
             바로판매
           </NavMainItem>
+          {/* {showSellModal && <Modal />} */}
         </NavMainList>
       </NavMain>
     </NavBox>
@@ -72,7 +73,7 @@ const NavTop = styled.div`
 
 const NavTopItem = styled.div`
   display: flex;
-  font-size: 12px;
+  font-size: 13px;
   margin-left: 24px;
   cursor: pointer;
   a {
