@@ -8,6 +8,7 @@ import ProductDetail from './pages/productDetail/ProductDetail';
 import ProductList from './pages/productList/ProductList';
 import KakaoRedirect from './pages/login/KakaoRedirect';
 import Mypage from './pages/myPage/Mypage';
+import PaymentPoint from './pages/payment/PaymentPoint';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: '/auth/kakao/callback', element: <KakaoRedirect /> },
       { path: '/productDetail/:id', element: <ProductDetail /> },
       { path: '/productList', element: <ProductList /> },
+      { path: '/payment', element: <PaymentPoint /> },
       { path: '/mypage', element: <Mypage /> },
     ],
   },
