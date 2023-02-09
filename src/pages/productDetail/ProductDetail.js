@@ -126,7 +126,7 @@ const ProductDetail = () => {
             </ButtonBox>
             <Wish>
               <BiBookmark className="bookMark" />
-              관심상품
+              &nbsp;관심상품
             </Wish>
           </div>
           <ChartBox chartData={chartData} topPrice={topPrice} params={params} />
@@ -162,9 +162,10 @@ export default ProductDetail;
 const DetailContent = styled.div`
   display: flex;
   margin: 0 auto;
-  padding: 30px 40px 120px;
+  padding: 50px 220px;
   overflow: hidden;
-  max-width: 1280px;
+  width: 100vw;
+  color: #222;
 `;
 
 const LeftColumn = styled.div`
@@ -180,6 +181,7 @@ const RightColumn = styled.div`
   padding-left: 3.4%;
   width: 50%;
   border-left: 1px solid #ebebeb;
+  padding-top: 100px;
   ::after {
     content: '';
     display: block;
@@ -200,28 +202,30 @@ const Title = styled.a`
   line-height: 19px;
   padding-top: 1px;
   margin-bottom: 9px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 800;
   border-bottom: 2px solid #222;
 `;
 const TitleDetail = styled.p`
+  margin-top: 10px;
   margin-bottom: 4px;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.9px;
   font-weight: 400;
 `;
 const DetailBox = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #666;
 `;
 
 const DetailYear = styled.p`
   margin: 10 0 px;
-  font-size: 15px;
 `;
 const DetailMile = styled.span`
   padding-left: 50px;
-  font-size: 15px;
 `;
 
 const Verify = styled.div`
@@ -233,29 +237,30 @@ const Verify = styled.div`
 
 const PriceBox = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+  justify-content: flex-end;
+  margin-top: 20px;
   padding-bottom: 12px;
   min-height: 44px;
+  font-size: 16px;
 `;
 
 const PriceTitle = styled.div`
   display: inline-block;
-  padding-top: 5px;
-  font-size: 12px;
-  color: rgba(34, 34, 34, 0.8);
+  font-weight: 600;
+  margin-right: 14px;
 `;
 
 const Price = styled.div`
   display: inline-block;
   line-height: 26px;
   vertical-align: top;
+  font-size: 18px;
 `;
 
 const ButtonBox = styled.div`
   display: flex;
-  margin-top: 17px;
   height: 60px;
+  margin-top: 20px;
 `;
 
 const BuyButton = styled.button`
@@ -282,19 +287,20 @@ const BuyButton = styled.button`
 const BuyTitle = styled.span`
   width: 100px;
   font-size: 18px;
+  font-weight: 600;
 `;
 
 const BuyPrice = styled.span`
-  margin-left: 10px;
+  margin-left: 20px;
   line-height: 15px;
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 const Wish = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 20px;
   border: 1px solid #ebebeb;
   border-radius: 10px;
   color: #333;
@@ -307,10 +313,12 @@ const Wish = styled.div`
 
 const ProductInfo = styled.div``;
 const MainOption = styled.div`
+  margin-bottom: 20px;
   padding-bottom: 13px;
   line-height: 22px;
   padding: 40px 0 20px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 const OptionList = styled.ul`
@@ -363,6 +371,7 @@ const TextContent = styled.p`
 `;
 const Notice = styled.div`
   padding-top: 40px;
+  padding-bottom: 60px;
   margin-top: 20px;
   line-height: 16px;
   border-top: 1px solid #f0f0f0;

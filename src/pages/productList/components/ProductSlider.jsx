@@ -36,14 +36,6 @@ export default function ProductSlider() {
   );
 }
 const StyledSlider = styled(Slider)`
-  .slick-prev {
-    z-index: 100;
-    left: 10px;
-    bottom: 10px;
-  }
-  .slick-next {
-    right: 10px;
-  }
   .slick-list {
     width: 100%;
     height: 200px;

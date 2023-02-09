@@ -69,14 +69,14 @@ const Image = styled.img`
 
 const Arrow = styled.div`
   position: absolute;
-  bottom: 50%;
+  bottom: 47%;
   font-size: 30px;
-  opacity: 0.5;
   z-index: 1;
+  color: #000;
 `;
 const BackIcon = styled(Arrow)`
-  left: 0;
+  left: 10px;
 `;
 const NextIcon = styled(Arrow)`
-  right: 0;
+  right: 10px;
 `;

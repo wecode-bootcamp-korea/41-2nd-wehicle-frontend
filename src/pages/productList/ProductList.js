@@ -156,13 +156,13 @@ const PopularOrder = styled.span`
 `;
 
 const ProductListWrapper = styled.div`
-  margin: auto;
+  margin: 0 auto 90px;
   max-width: 1280px;
 `;
 
 const AsideFilterBox = styled.div`
   min-width: 200px;
-  margin: 15px 60px 0px 0px;
+  margin: 40px 60px 0px 0px;
 `;
 
 const ContentTop = styled.div`
@@ -170,5 +170,5 @@ const ContentTop = styled.div`
   color: #222222;
   display: flex;
   justify-content: space-between;
-  margin: 14px 0px;
+  margin: 20px 0px;
 `;

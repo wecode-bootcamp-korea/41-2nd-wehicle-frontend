@@ -7,7 +7,7 @@ export default function PopularTypeCarContent({ data }) {
   const { id, thumbnail, brandName, name } = data;
 
   const toDetailPage = id => {
-    navigate(`/products/productId/${id}`);
+    navigate(`/productDetail/${id}`);
   };
 
   return (

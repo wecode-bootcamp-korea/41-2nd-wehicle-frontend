@@ -82,10 +82,9 @@ const ChartBox = ({ chartData, params, topPrice }) => {
 };
 
 const ChartTitle = styled.p`
-  padding: 30px 0;
-  margin-left: 0;
+  margin: 60px 0 20px 0;
   line-height: 22px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 `;
 
@@ -125,20 +124,22 @@ const TabName = styled.div`
 `;
 
 const TopBox = styled.div`
-  margin-top: 20px;
+  margin-top: 60px;
 `;
 
 const TopTitle = styled.ul`
   line-height: 17px;
   padding-top: 9px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
+  margin-bottom: 20px;
 `;
 const TopList = styled.li`
   margin: 15px 0;
   font-size: 18px;
   padding: 10px 10px;
   border: 1px solid #efefef;
+  border-radius: 10px;
   text-align: center;
 `;
 
