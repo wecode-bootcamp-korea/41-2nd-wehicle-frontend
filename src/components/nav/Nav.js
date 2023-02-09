@@ -18,8 +18,6 @@ const Nav = () => {
     setShowSellModal(false);
   };
 
-
-
   return (
     <NavBox>
       <NavTop>

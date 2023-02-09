@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Main /> },
       { path: '/login', element: <Login /> },
-      { path: '/auth/kakao/callback', element: <KakaoRedirect /> },     
+      { path: '/auth/kakao/callback', element: <KakaoRedirect /> },
       { path: '/productList', element: <ProductList /> },
       { path: '/productDetail/:id', element: <ProductDetail /> },
       { path: '/productList', element: <ProductList /> },
