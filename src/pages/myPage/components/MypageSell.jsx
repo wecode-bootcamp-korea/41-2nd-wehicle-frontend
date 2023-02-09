@@ -39,14 +39,15 @@ const SellContainer = styled.div`
 `;
 const SellTitleBox = styled.div``;
 const SellTitle = styled.p`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
 `;
 const SellTabsBox = styled.div``;
 const SellTabs = styled.ul`
   display: flex;
   justify-content: space-evenly;
-  height: 96px;
+  margin-top: 60px;
+  margin-bottom: 10px;
 `;
 const SellTab = styled.li`
   display: flex;
@@ -56,11 +57,12 @@ const SellTab = styled.li`
   width: 223.5px;
 `;
 const SellTabState = styled.p`
-  color: #757575;
-  font-size: 13px;
+  color: #666;
+  font-size: 16px;
 `;
 const SellTabStateValue = styled.p`
-  font-weight: bold;
   color: #222;
   font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
 `;

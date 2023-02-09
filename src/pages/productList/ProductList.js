@@ -120,14 +120,16 @@ const GoUpBtn = styled.button`
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 44px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   padding-top: 4px;
-  border-radius: 100%;
-  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
-  background-color: lightgray;
+  border-radius: 50%;
+  background: rgba(229, 229, 229, 0.7);
+  font-size: 16px;
+  color: #666;
   z-index: 999;
   border: none;
+  cursor: pointer;
 `;
 
 const ContentWrapper = styled.div`

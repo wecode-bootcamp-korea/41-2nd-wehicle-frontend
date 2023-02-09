@@ -70,15 +70,17 @@ const WishItemImg = styled.img`
   border-radius: 10px;
 `;
 const FavoriteContainer = styled.div`
-  border-top: 1px solid #9b9b9b;
+  border-top: 1px solid #999;
   padding: 40px;
+  margin-top: 10px;
   margin-bottom: 40px;
 `;
 const FavoriteTitleBox = styled.div``;
 const FavoriteTitle = styled.p`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 30px;
 `;
 const FavoriteContent = styled.div`
   width: 100%;
@@ -94,15 +96,14 @@ const FavoriteEmpty = styled.div`
   padding: 80px 0;
 `;
 const FavoriteEmptyNotice = styled.p`
-  font-size: 14px;
-  color: #a3a3a3;
+  font-size: 16px;
+  color: #999;
 `;
 const GoToShopBtn = styled.button`
-  width: 110px;
-  height: 34px;
+  width: 130px;
   margin-top: 12px;
-  padding: 0 14px;
-  font-size: 12px;
+  padding: 10px 16px 8px;
+  font-size: 14px;
   border: 1px solid #d3d3d3;
   border-radius: 8px;
   background-color: inherit;
