@@ -15,7 +15,6 @@ export default function MypageWish() {
       .then(res => res.json())
       .then(data => setWishList(data.data));
   }, []);
-  console.log(wishList);
   return (
     <FavoriteContainer>
       <FavoriteTitleBox>
@@ -27,6 +26,8 @@ export default function MypageWish() {
             return (
               <WishItemContainer key={item.productId}>
                 <WishItemImg src={item.thumbnail} />
+                <WishItemBrandText>{item.brandName}</WishItemBrandText>
+                <WishItemText>{item.carName}</WishItemText>
                 <WishItemPrice>
                   {parseInt(item.price)
                     .toString()
@@ -51,21 +52,33 @@ export default function MypageWish() {
 const WishItemContainer = styled.div`
   display: inline-flex;
   flex-direction: column;
+  margin-right: 30px;
+`;
+const WishItemText = styled.p`
+  font-size: 14px;
+`;
+const WishItemBrandText = styled.p`
+  font-size: 14px;
+  font-weight: bold;
 `;
 const WishItemPrice = styled.p`
-  font-size: 14px;
+  font-size: 16px;
 `;
 const WishItemImg = styled.img`
   width: 200px;
   height: 200px;
+  border-radius: 10px;
 `;
 const FavoriteContainer = styled.div`
+  border-top: 1px solid #9b9b9b;
   padding: 40px;
+  margin-bottom: 40px;
 `;
 const FavoriteTitleBox = styled.div``;
 const FavoriteTitle = styled.p`
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 20px;
 `;
 const FavoriteContent = styled.div`
   width: 100%;

@@ -9,9 +9,6 @@ export default function Mypage() {
     <MypageContainer>
       <MypageProfile />
       <MypageSell />
-      <MypageStorageBtnBox>
-        <MypageStorageBtn src="./images/mypage/mypageBtn.png" />
-      </MypageStorageBtnBox>
       <MypageWish />
     </MypageContainer>
   );
@@ -23,11 +20,4 @@ const MypageContainer = styled.div`
 const MypageStorageBtnBox = styled.div`
   display: flex;
   justify-content: center;
-`;
-const MypageStorageBtn = styled.img`
-  width: 1000px;
-  height: 60px;
-  border-radius: 16px;
-  object-fit: fill;
-  cursor: pointer;
 `;

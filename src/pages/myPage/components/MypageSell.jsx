@@ -11,7 +11,7 @@ export default function MypageSell() {
         <SellTabs>
           <SellTab>
             <SellTabState>입찰 진행 중</SellTabState>
-            <SellTabStateValue>0</SellTabStateValue>
+            <SellTabStateValue>2</SellTabStateValue>
           </SellTab>
           <SellTab>
             <SellTabState>입찰 실패</SellTabState>
@@ -19,15 +19,15 @@ export default function MypageSell() {
           </SellTab>
           <SellTab>
             <SellTabState>구매 완료</SellTabState>
-            <SellTabStateValue>0</SellTabStateValue>
+            <SellTabStateValue>1</SellTabStateValue>
           </SellTab>
           <SellTab>
             <SellTabState>판매 중</SellTabState>
-            <SellTabStateValue>0</SellTabStateValue>
+            <SellTabStateValue>2</SellTabStateValue>
           </SellTab>
           <SellTab>
             <SellTabState>판매 완료</SellTabState>
-            <SellTabStateValue>0</SellTabStateValue>
+            <SellTabStateValue>1</SellTabStateValue>
           </SellTab>
         </SellTabs>
       </SellTabsBox>
