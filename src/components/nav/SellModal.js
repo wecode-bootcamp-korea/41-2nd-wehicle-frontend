@@ -102,8 +102,7 @@ export default function SellModal() {
   }, []);
 
   const alertByBuyBtn = () => {
-    alert('판매가 정상적으로 등록되었습니다.');
-    navigate('/');
+    navigate('/payment');
   };
 
   return (

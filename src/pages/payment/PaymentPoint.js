@@ -126,7 +126,9 @@ const PaymentPoint = () => {
       </Box>
       <Box>
         <Title>탁송날짜</Title>
-        <Calender startDate={startDate} onChange={handleChange} />
+        <CalenderBox>
+          <Calender startDate={startDate} onChange={handleChange} />
+        </CalenderBox>
       </Box>
       <Box>
         <Title>포인트</Title>
@@ -168,22 +170,25 @@ export default PaymentPoint;
 const AddressBox = styled.div``;
 const AddrForm = styled.form``;
 const AddrInput = styled.input.attrs({ placeholder: '주소 입력' })`
-  width: 50%;
+  width: 49%;
   height: 40px;
   border: 1px solid lightgray;
-  border-radius: 7px;
+
+  padding: 10px;
 `;
 const DetailAddrInput = styled.input.attrs({ placeholder: '상세 주소' })`
   width: 100%;
   height: 40px;
   border: 1px solid lightgray;
-  border-radius: 7px;
+  margin-top: 10px;
+  padding: 10px;
 `;
 const ZipCodeInput = styled.input.attrs({ placeholder: '우편 번호' })`
-  width: 50%;
+  float: right;
+  width: 49%;
   height: 40px;
   border: 1px solid lightgray;
-  border-radius: 7px;
+  padding: 10px;
 `;
 
 const BtnBox = styled.div`
@@ -192,26 +197,25 @@ const BtnBox = styled.div`
 `;
 
 const AddressBtn = styled.p`
-  width: 80px;
+  width: 100px;
   height: 20px;
   color: #b2b2b2;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 10px;
   cursor: pointer;
 `;
 
 const Content = styled.div`
-  background-color: #fafafa;
+  padding: 50px 0;
+  background-color: #f5f5f5;
 `;
 
 const Box = styled.div`
-  margin: 0 auto;
+  margin: 14px auto;
   max-width: 780px;
-  padding: 32px;
+  padding: 50px;
   background-color: #fff;
-  border-top: 8px solid #fafafa;
-  &:last-child {
-    border-bottom: 20px solid #fafafa;
-  }
+  border-radius: 10px;
 `;
 
 const ProductBox = styled.div`
@@ -221,49 +225,51 @@ const ProductBox = styled.div`
 
 const ProductImg = styled.img`
   padding-top: 0;
-  width: 80px;
-  height: 80px;
+  width: 170px;
+  height: 170px;
   flex-shrink: 0;
   border-radius: 10px;
 `;
 
 const ProductInfo = styled.div`
   flex: 1;
-  padding-left: 16px;
+  padding-top: 10px;
+  padding-left: 26px;
 `;
 
 const ProductBrand = styled.div`
   font-weight: 700;
-  font-size: 14px;
+  font-size: 24px;
 `;
 const ProductName = styled.div`
   line-height: 17px;
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 20px;
 `;
 
 const ProductYear = styled.div`
   line-height: 17px;
-  margin-top: 5px;
-  font-size: 14px;
+  margin-top: 7px;
+  color: #666;
+  font-size: 16px;
 `;
 const ProductMile = styled.div`
   line-height: 17px;
-  margin-top: 5px;
-  font-size: 14px;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #666;
 `;
 const Title = styled.div`
   line-height: 22px;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
 `;
 
 const PointContent = styled.div`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 100%;
-  padding: 17px 5px;
+  padding: 16px 10px 14px;
   border: 1px solid #ebebeb;
-  border-radius: 10px;
   margin-top: 25px;
   width: 100%;
 `;
@@ -287,9 +293,8 @@ const PriceDetail = styled.div`
   justify-content: space-between;
   flex-direction: column;
   padding-top: 11px;
-  font-size: 13px;
+  font-size: 16px;
   min-height: 26px;
-  font-size: 13px;
 `;
 
 const DetailBox = styled.div`
@@ -304,12 +309,13 @@ const OrderButton = styled.button`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   background-color: #222;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   height: 52px;
+  border: none;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
@@ -317,4 +323,8 @@ const OrderButton = styled.button`
   &:hover {
     opacity: 1;
   }
+`;
+
+const CalenderBox = styled.div`
+  margin-top: 18px;
 `;
