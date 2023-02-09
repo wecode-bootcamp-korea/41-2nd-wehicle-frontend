@@ -96,9 +96,11 @@ const PaymentPoint = () => {
             <ProductBrand>{product.data?.productDetail.brandName}</ProductBrand>
             <ProductName>{product.data?.productDetail.carName}</ProductName>
             <ProductMile>
-              주행거리: {product.data?.productDetail.mileage}
+              주행거리: {product.data?.productDetail.mileage}km
             </ProductMile>
-            <ProductYear>연식: {product.data?.productDetail.year}</ProductYear>
+            <ProductYear>
+              연식: {product.data?.productDetail.year} 년
+            </ProductYear>
           </ProductInfo>
         </ProductBox>
       </Box>
