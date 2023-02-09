@@ -104,6 +104,7 @@ const TabList = styled.ul`
   border-radius: 10px;
   background-color: #f4f4f4;
   list-style: none;
+  font-size: 15px;
 `;
 
 const TabTitle = styled.li`
@@ -135,9 +136,10 @@ const TopTitle = styled.ul`
 `;
 const TopList = styled.li`
   margin: 15px 0;
-  font-size: 14px;
+  font-size: 18px;
   padding: 10px 10px;
   border: 1px solid #efefef;
+  text-align: center;
 `;
 
 export default ChartBox;
