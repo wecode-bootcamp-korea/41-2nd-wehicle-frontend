@@ -18,7 +18,7 @@ export default function Products() {
 
   useEffect(() => {
     fetch(
-      `${BASE_URL}products/?offset=${offset || 8}&limit=${limit || 8}&oil=${
+      `${BASE_URL}products/?offset=${offset}&limit=${limit || 8}&oil=${
         oil || ''
       }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}&keyword=${
         keyword || ''
@@ -30,14 +30,17 @@ export default function Products() {
 
   useEffect(() => {
     fetch(
-      `${BASE_URL}products/?offset=${offset || 8}&limit=${limit || 8}&oil=${
+      `${BASE_URL}products/?offset=${offset}&limit=${limit || 8}&oil=${
         oil || ''
       }&brand=${brandId || ''}&type=${type || ''}&size=${size || ''}&keyword=${
         keyword || ''
       }`
     )
       .then(res => res.json())
-      .then(data => setProducts([...data.data]));
+      .then(data => {
+        console.log(data.data);
+        setProducts([...data.data]);
+      });
   }, [brandId, oil, type, size, keyword]);
 
   const loadMore = () => {
@@ -51,7 +54,7 @@ export default function Products() {
         {products.map(product => {
           return (
             <ProductCard
-              key={product.carId}
+              key={product.id}
               onClick={() => {
                 navigate(`/products/productId/${product.carId}`);
               }}
@@ -63,7 +66,12 @@ export default function Products() {
               <ProductBrandText>{product.brandName}</ProductBrandText>
               <ProductDetailText>{product.carName}</ProductDetailText>
               <FilterBtn />
-              <ProductPriceText>{product.price}</ProductPriceText>
+              <ProductPriceText>
+                {parseInt(product.price)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                원
+              </ProductPriceText>
             </ProductCard>
           );
         })}

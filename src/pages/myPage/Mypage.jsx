@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MypageFavorite from './components/MypageFavorite';
+import MypageWish from './components/MypageWish';
 import MypageProfile from './components/MypageProfile';
 import MypageSell from './components/MypageSell';
 
@@ -12,7 +12,7 @@ export default function Mypage() {
       <MypageStorageBtnBox>
         <MypageStorageBtn src="./images/mypage/mypageBtn.png" />
       </MypageStorageBtnBox>
-      <MypageFavorite />
+      <MypageWish />
     </MypageContainer>
   );
 }
