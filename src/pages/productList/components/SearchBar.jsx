@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
+import { GrFormClose } from 'react-icons/gr';
 
 export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,16 +22,16 @@ export default function SearchBar() {
 
   return (
     <SubmitForm onSubmit={handleSubmit}>
-      <SearchClearBtnBox>
+      <SearchBarInput
+        type="text"
+        value={searchInput}
+        onChange={handleChangeInput}
+      />
+      {searchInput && (
         <SearchClearBtn type="button" onClick={handleClear}>
-          x
+          <GrFormClose />
         </SearchClearBtn>
-        <SearchBarInput
-          type="text"
-          value={searchInput}
-          onChange={handleChangeInput}
-        />
-      </SearchClearBtnBox>
+      )}
     </SubmitForm>
   );
 }

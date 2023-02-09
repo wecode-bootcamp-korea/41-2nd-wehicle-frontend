@@ -33,11 +33,11 @@ export const COLOR_CATEGORY = {
   title: '색상',
   subTitle: '모든 색상',
   categoryList: [
-    { id: 1, query: '"블랙"', name: '블랙' },
-    { id: 2, query: '"화이트"', name: '화이트' },
-    { id: 3, query: '"블루"', name: '블루' },
-    { id: 4, query: '"레드"', name: '레드' },
-    { id: 5, query: '"골드"', name: '골드' },
+    { id: 1, query: '"black"', name: '블랙' },
+    { id: 2, query: '"white"', name: '화이트' },
+    { id: 3, query: '"blue"', name: '블루' },
+    { id: 4, query: '"red"', name: '레드' },
+    { id: 5, query: '"gray"', name: '그레이' },
   ],
 };
 
