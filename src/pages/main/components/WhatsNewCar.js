@@ -84,9 +84,10 @@ const NewCarTitle = styled.h1`
 
 const NewCarContents = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 340px);
-  column-gap: 30px;
+  grid-template-columns: repeat(4, 25%);
+  column-gap: 10px;
   margin-top: 34px;
+  margin-left: 70px;
 `;
 
 const ContentBox = styled.div`
