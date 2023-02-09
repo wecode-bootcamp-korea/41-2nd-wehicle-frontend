@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import SellModal from './SellModal';
 
 const Nav = () => {
   const [showSellModal, setShowSellModal] = useState(false);
@@ -45,11 +44,12 @@ const Nav = () => {
           <NavMainItem>
             <Link to="/productList">SHOP</Link>
           </NavMainItem>
-          <NavMainItem>MY</NavMainItem>
+          <NavMainItem>
+            <Link to="/mypage">MY</Link>
+          </NavMainItem>
           <NavMainItem onClick={() => setShowSellModal(true)}>
             <Link to="/sell">바로판매</Link>
           </NavMainItem>
-          {/* {showSellModal && <SellModal />} */}
         </NavMainList>
       </NavMain>
     </NavBox>

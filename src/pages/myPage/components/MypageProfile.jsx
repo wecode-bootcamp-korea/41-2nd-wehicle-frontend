@@ -55,7 +55,7 @@ const UserIdBox = styled.div`
 `;
 const MyPageContainer = styled.div`
   margin: 0 auto;
-  padding: 40px;
+  padding: 50px 60px 40px 60px;
   max-width: 1280px;
   color: #222;
 `;
@@ -78,6 +78,7 @@ const UserImage = styled.img`
   border-radius: 100%;
   background-color: lightgray;
   margin-right: 30px;
+  margin-left: 20px;
   object-fit: contain;
 `;
 const InfoBox = styled.div`
@@ -88,21 +89,21 @@ const InfoBox = styled.div`
 `;
 const UserId = styled.p`
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
 `;
 const UserDetail = styled.div`
   display: flex;
 `;
 const ProfileEditBtn = styled.button`
   margin-top: 12px;
-  width: 70px;
+  width: 90px;
   height: 36px;
   line-height: 34px;
   border: 1px solid #d3d3d3;
   background-color: #ffffff;
   border-radius: 10px;
-  color: rgba(34, 34, 34, 0.8);
-  font-size: 12px;
+  color: #222;
+  font-size: 14px;
   cursor: pointer;
   text-align: center;
   margin-right: 8px;
@@ -118,11 +119,11 @@ const UserGradeBox = styled.div`
   justify-content: center;
 `;
 const UserGrade = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-right: 90px;
 `;
 const UserGradeSub = styled.p`
-  font-size: 12px;
-  color: lightgray;
+  font-size: 14px;
+  color: #999;
 `;
