@@ -20,8 +20,7 @@ function BuyModal({ carDetail, removeModal }) {
   // }, []);
 
   const alertByBuyBtn = () => {
-    alert('구매가 완료되었습니다.');
-    navigate('/');
+    navigate('/payment');
   };
 
   return (
