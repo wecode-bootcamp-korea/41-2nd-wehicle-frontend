@@ -1,58 +1,198 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import Calender from './Calender';
 import styled from 'styled-components';
+import moment from 'moment';
+import DaumPostCode from 'react-daum-postcode';
 
 const PaymentPoint = () => {
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [totalAddress, setTotalAddress] = useState('');
+  const [zoneCode, setZoneCode] = useState('');
+  const [product, setProduct] = useState({});
+  const [point, setPoint] = useState('');
+  const [startDate, setStartDate] = useState(new Date());
+  const deliveryDate = moment(startDate).format('YYYY-MM-DD');
+
+  const showModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+  const handleChange = date => {
+    setStartDate(date);
+  };
+  useEffect(() => {
+    fetch(`${BASE_URL}products/50`)
+      .then(res => res.json())
+      .then(data => {
+        setProduct(data.data);
+      });
+  }, []);
+
+  const handleComplete = data => {
+    setTotalAddress(data.address);
+    setZoneCode(data.zonecode);
+    let fullAddress = data.address;
+    let extraAddress = '';
+    if (data.addressType === 'R') {
+      if (data.bname !== '') {
+        extraAddress += data.bname;
+      }
+      if (data.buildingName !== '') {
+        extraAddress +=
+          extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+      }
+      fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+    }
+  };
+
+  useEffect(() => {
+    fetch(`${BASE_URL}orders`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('accessToken'),
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        setPoint(data.data[0]);
+      });
+  }, []);
+
+  const orderBtn = () => {
+    fetch(`${BASE_URL}users/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('accessToken'),
+      },
+      body: JSON.stringify({
+        methodId: 5,
+        address: totalAddress,
+        deliveryDate: deliveryDate,
+        dealPrice: totalPrice,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert('주문이 완료되었습니다.');
+      });
+  };
+
+  const myPoint = Math.floor(point.points);
+  const totalPrice = Math.floor(
+    (myPoint - Math.floor(product?.productDetail.sellingPrice)) * 1.015
+  );
   return (
     <Content>
       <Box>
         <ProductBox>
-          <ProductImg>이미지자리</ProductImg>
+          <ProductImg src={product?.productDetail.thumbnail} />
           <ProductInfo>
-            <ProductBrnad>브랜드</ProductBrnad>
-            <ProductName>차이름</ProductName>
+            <ProductBrand>{product?.productDetail.brandName}</ProductBrand>
+            <ProductName>{product?.productDetail.carName}</ProductName>
+            <ProductMile>
+              주행거리: {product?.productDetail.mileage}
+            </ProductMile>
+            <ProductYear>연식: {product?.productDetail.year}</ProductYear>
           </ProductInfo>
         </ProductBox>
       </Box>
       <Box>
         <Title>탁송주소</Title>
-        <PointContent></PointContent>
+        <BtnBox>
+          <AddressBtn onClick={showModal}>+ 새 주소 추가</AddressBtn>
+        </BtnBox>
+        {isModalOpen && (
+          <AddressBox>
+            <DaumPostCode
+              onComplete={handleComplete}
+              className="post-code"
+              autoClose={true}
+            />
+          </AddressBox>
+        )}
+        <AddrForm>
+          <ZipCodeInput type="text" value={zoneCode} readOnly />
+          <AddrInput type="text" value={totalAddress} readOnly />
+          <DetailAddrInput type="text" />
+        </AddrForm>
       </Box>
       <Box>
         <Title>탁송날짜</Title>
-        <Calender />
+        <Calender startDate={startDate} onChange={handleChange} />
       </Box>
       <Box>
         <Title>포인트</Title>
-        <PointContent>보유보인트 :</PointContent>
+        <PointContent>{myPoint.toLocaleString('ko-KR')} point</PointContent>
       </Box>
       <Box>
         <Title>최종 주문 정보</Title>
         <PriceBox>
           <div>총 결제금액</div>
-          <Price>얼마입니다.</Price>
+          <Price>{totalPrice}원</Price>
         </PriceBox>
         <PriceDetail>
           <DetailBox>
-            <Detail>즉시 구매가</Detail>
-            <DetailPrice>얼마</DetailPrice>
+            <div>즉시 구매가</div>
+            <div>
+              {Math.floor(product?.productDetail.sellingPrice).toLocaleString(
+                'ko-KR'
+              )}
+              원
+            </div>
           </DetailBox>
           <DetailBox>
-            <Detail>포인트</Detail>
-            <DetailPrice>얼마</DetailPrice>
+            <div>포인트</div>
+            <div>{myPoint.toLocaleString('ko-KR')} point</div>
           </DetailBox>
           <DetailBox>
-            <Detail>검수비</Detail>
-            <DetailPrice>얼마</DetailPrice>
+            <div>수수료</div>
+            <div>1.5%</div>
           </DetailBox>
         </PriceDetail>
-        <OrderButton>결제하기</OrderButton>
+        <OrderButton onClick={orderBtn}>결제하기</OrderButton>
       </Box>
     </Content>
   );
 };
 
 export default PaymentPoint;
+
+const AddressBox = styled.div``;
+const AddrForm = styled.form``;
+const AddrInput = styled.input.attrs({ placeholder: '주소 입력' })`
+  width: 50%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+`;
+const DetailAddrInput = styled.input.attrs({ placeholder: '상세 주소' })`
+  width: 100%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+`;
+const ZipCodeInput = styled.input.attrs({ placeholder: '우편 번호' })`
+  width: 50%;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+`;
+
+const BtnBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const AddressBtn = styled.p`
+  width: 80px;
+  height: 20px;
+  color: #b2b2b2;
+  font-size: 14px;
+  cursor: pointer;
+`;
 
 const Content = styled.div`
   background-color: #fafafa;
@@ -74,7 +214,7 @@ const ProductBox = styled.div`
   width: 100%;
 `;
 
-const ProductImg = styled.div`
+const ProductImg = styled.img`
   padding-top: 0;
   width: 80px;
   height: 80px;
@@ -87,11 +227,22 @@ const ProductInfo = styled.div`
   padding-left: 16px;
 `;
 
-const ProductBrnad = styled.div`
+const ProductBrand = styled.div`
   font-weight: 700;
   font-size: 14px;
 `;
 const ProductName = styled.div`
+  line-height: 17px;
+  margin-top: 5px;
+  font-size: 14px;
+`;
+
+const ProductYear = styled.div`
+  line-height: 17px;
+  margin-top: 5px;
+  font-size: 14px;
+`;
+const ProductMile = styled.div`
   line-height: 17px;
   margin-top: 5px;
   font-size: 14px;
@@ -143,11 +294,7 @@ const DetailBox = styled.div`
   margin: 5px 0;
 `;
 
-const Detail = styled.div``;
-
-const DetailPrice = styled.div``;
-
-const OrderButton = styled.div`
+const OrderButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,4 +309,7 @@ const OrderButton = styled.div`
   text-align: center;
   cursor: pointer;
   opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
 `;
