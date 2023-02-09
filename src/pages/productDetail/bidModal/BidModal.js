@@ -1,9 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { IoMdClose } from 'react-icons/io';
 
-function BidModal() {
+function BidModal({ carDetail, removeModal, setModal1 }) {
   const navigate = useNavigate();
+  const { brandName, carName, thumbnail, sellingPrice } = carDetail;
+  const price = Math.floor(sellingPrice).toLocaleString();
+
+  // const closeBtn = () => {
+  //   removeModal;
+  // };
 
   const alertByBidBtn = () => {
     alert('입찰이 완료되었습니다.');
@@ -11,41 +18,62 @@ function BidModal() {
   };
 
   return (
-    <BidModalBox>
-      <Title>입찰하기</Title>
-      <CarInfo>
-        <CarImgBox>
-          <CarImg src="/images/bidModal/car_01.png" />
-        </CarImgBox>
-        <CarDetailInfo>
-          <CarBrand>BMW</CarBrand>
-          <CarType>523d xDrive</CarType>
-          <CarPrice>₩ 40,000,000</CarPrice>
-        </CarDetailInfo>
-      </CarInfo>
-      <BidPriceContainer>
-        <BidPriceBox>
-          <WishPriceTitleBox>
-            <WishPriceTitle>입찰희망가</WishPriceTitle>
-          </WishPriceTitleBox>
-          <WishPriceInput placeholder="희망가를 입력해주세요" />
-          <Won>원</Won>
-        </BidPriceBox>
-      </BidPriceContainer>
-      <BidBtnBox>
-        <BidBtn onClick={alertByBidBtn}>
-          입찰하기
-          <br />
-        </BidBtn>
-      </BidBtnBox>
-    </BidModalBox>
+    <BidModalContainer>
+      <BidModalBox>
+        <Title>입찰하기</Title>
+        <CarInfo>
+          <CarImgBox>
+            <CarImg src={thumbnail} />
+          </CarImgBox>
+          <CarDetailInfo>
+            <CarBrand>{brandName}</CarBrand>
+            <CarType>{carName}</CarType>
+            <CarPrice>₩ {price}</CarPrice>
+          </CarDetailInfo>
+        </CarInfo>
+        <BidPriceContainer>
+          <BidPriceBox>
+            <WishPriceTitleBox>
+              <WishPriceTitle>입찰희망가</WishPriceTitle>
+            </WishPriceTitleBox>
+            <WishPriceInput placeholder="희망가를 입력해주세요" />
+            <Won>원</Won>
+          </BidPriceBox>
+        </BidPriceContainer>
+        <BidBtnBox>
+          <BidBtn onClick={alertByBidBtn}>
+            입찰하기
+            <br />
+          </BidBtn>
+        </BidBtnBox>
+        <CloseBtn onClick={removeModal}>
+          <IoMdClose />
+        </CloseBtn>
+      </BidModalBox>
+    </BidModalContainer>
   );
 }
 
+const BidModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #222;
+  z-index: 2;
+`;
+
 const BidModalBox = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 600px;
   height: 588px;
   margin: 50px auto;
+  background: #fff;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
@@ -60,23 +88,29 @@ const CarInfo = styled.div`
   display: flex;
   justify-content: space-between;
   width: 560px;
-  height: 200px;
+  height: 210px;
   margin: 0 auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 `;
+
 const CarImgBox = styled.div`
-  width: 300px;
-  height: 240px;
+  width: 270px;
+  height: 150px;
+  margin-top: 30px;
+  margin-left: 25px;
 `;
+
 const CarImg = styled.img`
   width: 100%;
-  translate: 0 40px;
+  height: 100%;
+  object-fit: cover;
 `;
+
 const CarDetailInfo = styled.div`
   width: 230px;
   margin-top: 60px;
   font-size: 24px;
-
+  text-align: left;
   color: #222;
 `;
 
@@ -85,15 +119,15 @@ const CarBrand = styled.p`
 `;
 
 const CarType = styled.p`
+  margin-top: 5px;
   font-size: 18px;
-  margin-top: -4px;
   color: #999;
 `;
 
 const CarPrice = styled.p`
-  margin-top: 10px;
+  margin-top: 20px;
   color: #ef6253;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
 `;
 
@@ -142,7 +176,7 @@ const WishPriceInput = styled.input`
 
 const Won = styled.span`
   position: absolute;
-  top: 68px;
+  top: 65px;
   right: 23px;
   font-size: 20px;
 `;
@@ -171,6 +205,16 @@ const BidBtn = styled.button`
     font-weight: 400;
     opacity: 0.7;
   }
+`;
+
+const CloseBtn = styled.div`
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  transform: (-50%, -50%);
+  font-size: 24px;
+  color: #222;
+  cursor: pointer;
 `;
 
 export default BidModal;

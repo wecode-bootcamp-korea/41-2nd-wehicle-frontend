@@ -15,19 +15,31 @@ import { FiCircle, FiPackage } from 'react-icons/fi';
 import { RiCarWashingFill } from 'react-icons/ri';
 import ChartBox from './ChartBox';
 import Carousel from './Carousel';
+import BuyModal from './buyModal/BuyModal';
+import BidModal from './bidModal/BidModal';
 
 const ProductDetail = () => {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   const [carData, setCarData] = useState({});
-  const [modal, setModal] = useState(false);
+  const [modal1, setModal1] = useState(false);
+  const [modal2, setModal2] = useState(false);
   const params = useParams();
 
-  const showModal = () => {
-    setModal(true);
+  const showModal1 = () => {
+    setModal1(true);
   };
-  const removeModal = () => {
-    setModal(false);
+
+  const showModal2 = () => {
+    setModal2(true);
+  };
+
+  const removeModal1 = () => {
+    setModal1(false);
+  };
+
+  const removeModal2 = () => {
+    setModal2(false);
   };
 
   useEffect(() => {
@@ -91,11 +103,21 @@ const ProductDetail = () => {
               </Price>
             </PriceBox>
             <ButtonBox>
-              <BuyButton>
+              <BuyButton onClick={showModal1}>
+                {modal1 && (
+                  <BidModal
+                    carDetail={carDetail}
+                    removeModal={removeModal1}
+                    modal1={modal1}
+                    setModal1={setModal1}
+                  />
+                )}
                 <BuyTitle>입찰</BuyTitle>
               </BuyButton>
-              <BuyButton onClick={showModal}>
-                {/* {modal && <Modal carDetail={carDetail} removeModal={removeModal/>} */}
+              <BuyButton onClick={showModal2}>
+                {modal2 && (
+                  <BuyModal carDetail={carDetail} removeModal={removeModal2} />
+                )}
                 <BuyTitle>바로구매</BuyTitle>
                 <BuyPrice>
                   {Math.floor(carDetail.sellingPrice).toLocaleString('ko-KR')}원
@@ -107,7 +129,6 @@ const ProductDetail = () => {
               관심상품
             </Wish>
           </div>
-
           <ChartBox chartData={chartData} topPrice={topPrice} params={params} />
           <GuideBox>
             {GUIDE_LIST.map(data => {
@@ -158,6 +179,7 @@ const RightColumn = styled.div`
   float: right;
   padding-left: 3.4%;
   width: 50%;
+  border-left: 1px solid #ebebeb;
   ::after {
     content: '';
     display: block;
@@ -165,7 +187,6 @@ const RightColumn = styled.div`
     top: 0;
     left: 0;
     bottom: 0;
-    border-left: 1px solid #ebebeb;
   }
 `;
 
