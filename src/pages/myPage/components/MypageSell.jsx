@@ -23,11 +23,11 @@ export default function MypageSell() {
           </SellTab>
           <SellTab>
             <SellTabState>판매 중</SellTabState>
-            <SellTabStateValue>2</SellTabStateValue>
+            <SellTabStateValue>1</SellTabStateValue>
           </SellTab>
           <SellTab>
             <SellTabState>판매 완료</SellTabState>
-            <SellTabStateValue>1</SellTabStateValue>
+            <SellTabStateValue>0</SellTabStateValue>
           </SellTab>
         </SellTabs>
       </SellTabsBox>

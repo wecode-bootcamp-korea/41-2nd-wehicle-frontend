@@ -102,7 +102,7 @@ export default function SellModal() {
   }, []);
 
   const alertByBuyBtn = () => {
-    navigate('/payment');
+    navigate('/mypage');
   };
 
   return (
