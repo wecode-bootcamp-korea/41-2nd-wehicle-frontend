@@ -79,7 +79,7 @@ const PaymentPoint = () => {
       .then(res => res.json())
       .then(data => {
         alert('주문이 완료되었습니다.');
-        navigate('/');
+        navigate('/mypage');
       });
   };
 
