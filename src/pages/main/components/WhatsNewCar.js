@@ -28,7 +28,7 @@ function WhatsNewCar() {
   };
 
   const toDetailPage = id => {
-    navigate(`/products/productId/${id}`);
+    navigate(`/productDetail/${id}`);
   };
 
   return (
@@ -84,9 +84,10 @@ const NewCarTitle = styled.h1`
 
 const NewCarContents = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 340px);
-  column-gap: 30px;
+  grid-template-columns: repeat(4, 25%);
+  column-gap: 10px;
   margin-top: 34px;
+  margin-left: 70px;
 `;
 
 const ContentBox = styled.div`
@@ -128,12 +129,14 @@ const More = styled.div`
 `;
 
 const MoreBtn = styled.button`
-  padding: 17px 27px 15px;
+  width: 100px;
+  height: 35px;
+  margin: 20px 0 0;
+  padding-top: 3px;
   border: 1px solid #222;
-  border-radius: 10px;
-  background: #fff;
+  background: none;
+  border-radius: 20px;
   font-size: 16px;
-  color: #222;
   cursor: pointer;
 
   &:hover {
