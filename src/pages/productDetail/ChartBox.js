@@ -35,8 +35,6 @@ const ChartBox = ({ chartData, params, topPrice }) => {
       .then(res => res.json())
       .then(data => {
         setCarChartData(data.data.productMarketPrice);
-        console.log(10);
-        console.log(carChartData);
       });
   }, [searchParams]);
 
@@ -55,8 +53,8 @@ const ChartBox = ({ chartData, params, topPrice }) => {
         <Date onChange={selectedYear}>
           {YEAR_LIST.map(year => {
             return (
-              <DateOption value={year} key={year}>
-                {year}
+              <DateOption value={year.year} key={year.id}>
+                {year.year}
               </DateOption>
             );
           })}
@@ -154,14 +152,14 @@ const CHART_LIST = [
 ];
 
 const YEAR_LIST = [
-  '전체',
-  '2022',
-  '2021',
-  '2020',
-  '2019',
-  '2018',
-  '2017',
-  '2016',
-  '2015',
-  '2014',
+  { id: 1, year: '전체' },
+  { id: 2, year: '2022' },
+  { id: 3, year: '2021' },
+  { id: 4, year: '2020' },
+  { id: 5, year: '2019' },
+  { id: 6, year: '2018' },
+  { id: 7, year: '2017' },
+  { id: 8, year: '2016' },
+  { id: 9, year: '2015' },
+  { id: 10, year: '2014' },
 ];

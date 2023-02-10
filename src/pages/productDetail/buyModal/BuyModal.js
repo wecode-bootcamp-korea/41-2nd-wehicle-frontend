@@ -131,6 +131,7 @@ const CarDetailInfo = styled.div`
   margin-top: 60px;
   font-size: 24px;
   text-align: left;
+
   color: #222;
 `;
 

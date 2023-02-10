@@ -54,7 +54,7 @@ const CarouselBox = styled.div`
 
 const ArrowBtn = styled.div`
   position: absolute;
-  top: 40%;
+  top: 47%;
   cursor: pointer;
 `;
 

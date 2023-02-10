@@ -181,7 +181,6 @@ const RightColumn = styled.div`
   padding-left: 3.4%;
   width: 50%;
   border-left: 1px solid #ebebeb;
-  padding-top: 100px;
   ::after {
     content: '';
     display: block;

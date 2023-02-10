@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Calender from './Calender';
 import styled from 'styled-components';
 import moment from 'moment';
@@ -15,7 +14,6 @@ const PaymentPoint = () => {
   const [point, setPoint] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const deliveryDate = moment(startDate).format('YYYY-MM-DD');
-  const navigate = useNavigate();
 
   const showModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -24,10 +22,10 @@ const PaymentPoint = () => {
     setStartDate(date);
   };
   useEffect(() => {
-    fetch(`${BASE_URL}products/104`)
+    fetch(`${BASE_URL}products/50`)
       .then(res => res.json())
       .then(data => {
-        setProduct(data);
+        setProduct(data.data);
       });
   }, []);
 
@@ -63,7 +61,7 @@ const PaymentPoint = () => {
   }, []);
 
   const orderBtn = () => {
-    fetch(`${BASE_URL}orders`, {
+    fetch(`${BASE_URL}users/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -79,28 +77,25 @@ const PaymentPoint = () => {
       .then(res => res.json())
       .then(data => {
         alert('주문이 완료되었습니다.');
-        navigate('/mypage');
       });
   };
 
   const myPoint = Math.floor(point.points);
-  const totalPrice =
-    Math.floor(myPoint - Math.floor(product.data?.productDetail.sellingPrice)) *
-    1.015;
+  const totalPrice = Math.floor(
+    (myPoint - Math.floor(product?.productDetail.sellingPrice)) * 1.015
+  );
   return (
     <Content>
       <Box>
         <ProductBox>
-          <ProductImg src={product.data?.productDetail.thumbnail} />
+          <ProductImg src={product?.productDetail.thumbnail} />
           <ProductInfo>
-            <ProductBrand>{product.data?.productDetail.brandName}</ProductBrand>
-            <ProductName>{product.data?.productDetail.carName}</ProductName>
+            <ProductBrand>{product?.productDetail.brandName}</ProductBrand>
+            <ProductName>{product?.productDetail.carName}</ProductName>
             <ProductMile>
-              주행거리: {product.data?.productDetail.mileage}km
+              주행거리: {product?.productDetail.mileage}
             </ProductMile>
-            <ProductYear>
-              연식: {product.data?.productDetail.year} 년
-            </ProductYear>
+            <ProductYear>연식: {product?.productDetail.year}</ProductYear>
           </ProductInfo>
         </ProductBox>
       </Box>
@@ -126,9 +121,7 @@ const PaymentPoint = () => {
       </Box>
       <Box>
         <Title>탁송날짜</Title>
-        <CalenderBox>
-          <Calender startDate={startDate} onChange={handleChange} />
-        </CalenderBox>
+        <Calender startDate={startDate} onChange={handleChange} />
       </Box>
       <Box>
         <Title>포인트</Title>
@@ -138,15 +131,15 @@ const PaymentPoint = () => {
         <Title>최종 주문 정보</Title>
         <PriceBox>
           <div>총 결제금액</div>
-          <Price>{totalPrice.toLocaleString('ko-KR')}원</Price>
+          <Price>{totalPrice}원</Price>
         </PriceBox>
         <PriceDetail>
           <DetailBox>
             <div>즉시 구매가</div>
             <div>
-              {Math.floor(
-                product.data?.productDetail.sellingPrice
-              ).toLocaleString('ko-KR')}
+              {Math.floor(product?.productDetail.sellingPrice).toLocaleString(
+                'ko-KR'
+              )}
               원
             </div>
           </DetailBox>
@@ -170,25 +163,22 @@ export default PaymentPoint;
 const AddressBox = styled.div``;
 const AddrForm = styled.form``;
 const AddrInput = styled.input.attrs({ placeholder: '주소 입력' })`
-  width: 49%;
+  width: 50%;
   height: 40px;
   border: 1px solid lightgray;
-
-  padding: 10px;
+  border-radius: 7px;
 `;
 const DetailAddrInput = styled.input.attrs({ placeholder: '상세 주소' })`
   width: 100%;
   height: 40px;
   border: 1px solid lightgray;
-  margin-top: 10px;
-  padding: 10px;
+  border-radius: 7px;
 `;
 const ZipCodeInput = styled.input.attrs({ placeholder: '우편 번호' })`
-  float: right;
-  width: 49%;
+  width: 50%;
   height: 40px;
   border: 1px solid lightgray;
-  padding: 10px;
+  border-radius: 7px;
 `;
 
 const BtnBox = styled.div`
@@ -197,11 +187,10 @@ const BtnBox = styled.div`
 `;
 
 const AddressBtn = styled.p`
-  width: 100px;
+  width: 80px;
   height: 20px;
   color: #b2b2b2;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 14px;
   cursor: pointer;
 `;
 
@@ -258,6 +247,17 @@ const ProductMile = styled.div`
   margin-top: 50px;
   font-size: 16px;
   color: #666;
+`;
+
+const ProductYear = styled.div`
+  line-height: 17px;
+  margin-top: 5px;
+  font-size: 14px;
+`;
+const ProductMile = styled.div`
+  line-height: 17px;
+  margin-top: 5px;
+  font-size: 14px;
 `;
 const Title = styled.div`
   line-height: 22px;
@@ -323,8 +323,4 @@ const OrderButton = styled.button`
   &:hover {
     opacity: 1;
   }
-`;
-
-const CalenderBox = styled.div`
-  margin-top: 18px;
 `;
