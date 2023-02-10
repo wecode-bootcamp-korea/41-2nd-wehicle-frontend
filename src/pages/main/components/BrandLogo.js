@@ -7,7 +7,7 @@ export default function BrandLogo({ data }) {
   const navigate = useNavigate();
 
   const carBrandQuery = id => {
-    navigate(`/products?brand=${id}`);
+    navigate(`/productList?brand_id=${id}`);
   };
 
   return (
