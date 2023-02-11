@@ -8,11 +8,6 @@
 - 23.01.30~23.02.10 (2주)
 </br>
 
-# 깃허브 링크
-
-
-</br>
-
 # 개발 인원 및 파트
 ## FE
 | 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 </br> 결제페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
