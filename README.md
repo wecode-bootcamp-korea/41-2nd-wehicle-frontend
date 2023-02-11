@@ -17,7 +17,7 @@
 | 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | --- | --- | --- |
 | 박정은 | [구현한 페이지 이름] | <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
-| 오현주 | 메인페이지 </br> 구매하기 / 입찰하기 모달창 </br> 판매등록 페이지 |  <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 오현주 | 메인페이지 </br> 구매하기 입찰하기 모달창 </br> 판매등록 페이지 |  <a href="https://github.com/hyunjoo1130?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 
 </br>
 
@@ -78,7 +78,7 @@
 | :--: | :--: | :--: |
 | 메인페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259021-93e7ff30-fbd7-43e8-b1d5-9320d38fde87.png"> | FE: 오현주 / BE: 김가은, 김승수 |
 | 상품리스트 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259143-0786a45c-006b-4f22-8e34-4ef124f89310.png"> | FE: 김진우, BE: 김가은, 김승수 |
-| 상세 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259170-fa32d683-9ee9-4e33-b454-e066959a8875.png> | FE: 박정은, BE: 김가은, 김승수 |
+| 상세 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259170-fa32d683-9ee9-4e33-b454-e066959a8875.png"> | FE: 박정은, BE: 김가은, 김승수 |
 | 입찰하기 모달창 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259340-ebfa05ee-39a8-4de6-81a5-ea9ef546cb0e.png"> | FE: 오현주 |
 | 구매하기 모달창 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259368-5cf7fa1a-5f15-4243-ab07-720c65aa87a5.png"> | FE: 오현주 |
 | 결제 페이지 | <img width=50% src="https://user-images.githubusercontent.com/58460131/218259389-6370460a-b4fc-44f4-a917-8fcfbc4f9503.png"> | FE: 김진우, 박정은, BE: 김가은, 김승수 |
