@@ -15,7 +15,7 @@
 
 # 개발 인원 및 파트
 ## FE
-| 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 </br> 결제페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | --- | --- | --- |
 | 박정은 | [구현한 페이지 이름] | <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | 오현주 | 메인페이지 </br> 구매하기 입찰하기 모달창 </br> 판매등록 페이지 |  <a href="https://github.com/hyunjoo1130?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
@@ -101,6 +101,10 @@
 - 사이트에서 제공중인 차 종류들을 브랜드별로 필터할 수 있는 상단 브랜드 필터 버튼 구현.
 - 정밀한 필터를 위해 왼쪽 사이드에 다양항 옵션들을 개별 체크박스를 통한 필터링을 할 수 있는 섹션 구현.
 - 페이지의 전체 UI를 해치지 않기 위해, 한번 누를 때 마다 8개의 아이템들을 더 보여주는 페이지네이션 적용.
+
+## 결제페이지 (진우)
+- 결제할 상품의 정보를 가져와 상단에 보여줌.
+- Daum Post Code 라이브러리를 이용한 카카오 주소 API 기능을 사용하여, 탁송 주소를 설정할 수 있게 구현.
 
 ## 메인페이지 (현주)
 - 캐러셀 기능
