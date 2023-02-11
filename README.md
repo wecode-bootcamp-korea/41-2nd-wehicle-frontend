@@ -1,5 +1,6 @@
-
-- 입찰 시스템을 통한 거래 중개 사이트를 모델링한 프로젝트입니다.
+<img src="https://user-images.githubusercontent.com/58460131/218261481-0d0bd198-d172-449a-abc8-aa2a770d1630.jpg"></img>
+- 입찰 시스템을 통한 거래 중개 사이트(KREAM 사이트 기반)를 모델링한 프로젝트입니다.
+- Product : 실시간 중고차 거래
 </br>
 
 # 개발 기간
