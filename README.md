@@ -12,16 +12,16 @@
 ## FE
 | 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 </br> 결제페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | --- | --- | --- |
-| 박정은 | 네이게이션바 </br> 상세페이지 </br> 결제 페이지 </br> | <a href="https://github.com/jeong-eun-park><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 박정은 | 네이게이션바 </br> 상세페이지 </br> 결제 페이지 </br> | <a href="https://github.com/jeong-eun-park"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | 오현주 | 메인페이지 </br> 구매하기 입찰하기 모달창 </br> 판매등록 페이지 |  <a href="https://github.com/hyunjoo1130?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 
 </br>
 
 ## BE
 
-| 김승수 (Product Manager) | <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 김승수 (Product Manager) | <a href="https://github.com/kss7082"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | --- | --- |
-| 김가은 | <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 김가은 | <a href="https://github.com/gaeung"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 
 </br>
 
@@ -38,9 +38,9 @@
 
 ### 백엔드
 
-|JavaScript|Nodejs|MySql|Rest|
-| :--: | :--: | :--: | :--: |
-| <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="icon" width="65" height="65" /> |
+|JavaScript|Nodejs|MySql|Rest|AWS|
+| :--: | :--: | :--: | :--: | :--: |
+| <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="icon" width="65" height="65" /> | <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="icon" width="65" height="65" /> |
 
 </br>
 
@@ -58,8 +58,8 @@
 
 </br>
 
-| <img width="513" alt="스크린샷 2023-01-08 오후 5 23 04" src="https://user-images.githubusercontent.com/90304025/218025670-a0045604-7a87-4b8d-95de-dd464eddb6bb.png"> | <img width="1406" alt="스크린샷 2023-01-08 오후 5 24 05" src="https://user-images.githubusercontent.com/90304025/218025098-5d88c582-37c6-42ed-9511-a828d9acaef7.png"> |
-|:-:|:-:|
+| <img width="513" alt="스크린샷 2023-01-08 오후 5 23 04" src="https://user-images.githubusercontent.com/90304025/218025670-a0045604-7a87-4b8d-95de-dd464eddb6bb.png"> | <img width="1406" alt="스크린샷 2023-01-08 오후 5 24 05" src="https://user-images.githubusercontent.com/90304025/218025098-5d88c582-37c6-42ed-9511-a828d9acaef7.png"> | <img width="513" alt="스크린샷 2023-02-12 오후 6 33 05" src="https://user-images.githubusercontent.com/58460131/218303374-afc2dba8-295a-4e96-82ef-15a96c2f5f60.png"> |
+|:-:|:-:|:-:|
 
 </br>
 
@@ -67,6 +67,12 @@
 <a href="https://youtu.be/YxTH82veYOk">🔗 Wehicle 데모영상 </a>
 
 </br>
+
+# DB 모델링
+
+![WEHICLE ERD](https://user-images.githubusercontent.com/112741645/218115431-883c5007-6ffe-49c8-876a-e76df3db2a22.jpg)
+
+<br>
 
 # FrontEnd 구현 페이지
 
@@ -103,28 +109,28 @@
 
 ## 메인페이지 (현주)
 - 캐러셀 기능
-: useRef hooks 사용하여 배너사진이 들어가있는 태그에 접근하여 translateX로 스타일 컨트롤
-: useState 로 해당 배너사진 태그들에 임의의 숫자를 지정하여 관리
+- useRef hooks 사용하여 배너사진이 들어가있는 태그에 접근하여 translateX로 스타일 컨트롤
+- useState 로 해당 배너사진 태그들에 임의의 숫자를 지정하여 관리
 
 - 페이지네이션 기능
-: 쿼리스트링으로 들어갈 offset은 useState로, limit은 상수변수로 관리하여 가공하여 렌더링
-: 그러나 새로고침시 쿼리스트링이 남아있기에, 새로고침시 초기 limit 데이터들만 렌더링 될 수 있도록 새로고침용 useEffect fetch 따로 설정
-: 상품데이터를 클릭 시, 상세페이지로 넘어갈 수 있게 navigate 사용하여 동적라우팅
+- 쿼리스트링으로 들어갈 offset은 useState로, limit은 상수변수로 관리하여 가공하여 렌더링
+- 그러나 새로고침시 쿼리스트링이 남아있기에, 새로고침시 초기 limit 데이터들만 렌더링 될 수 있도록 새로고침용 useEffect fetch 따로 설정
+- 상품데이터를 클릭 시, 상세페이지로 넘어갈 수 있게 navigate 사용하여 동적라우팅
 
 - 조건부 렌더링
-: 고정된 offset, limit 으로 쿼리스트링 활용
-: 태그에 속성을 주어, 해당 태그의 속성값과 일치/불일치 조건문으로 해당 데이터를 따로따로 받아 렌더링
+- 고정된 offset, limit 으로 쿼리스트링 활용
+- 태그에 속성을 주어, 해당 태그의 속성값과 일치/불일치 조건문으로 해당 데이터를 따로따로 받아 렌더링
 
 
 ## Footer (현주)
 - 레이아웃 구현
-: 상수데이터, map() 활용
+- 상수데이터, map() 활용
 
-## 입찰하기, 구매하기 모달창
+## 입찰하기, 구매하기 모달창 (현주)
 - 입찰하기 모달창 : 레이아웃 구현, 입찰 완료 alert 
 - 구매하기 모달창
-: 구매하기 버튼 누를 시 useNavigate를 사용하여 결제페이지로 이동할 수 있게 구현
-: 상세페이지에서 받은 데이터들을 props로 모달창으로 재전달 받아 필요한 정보들만 가공하여 렌더링
+- 구매하기 버튼 누를 시 useNavigate를 사용하여 결제페이지로 이동할 수 있게 구현
+- 상세페이지에서 받은 데이터들을 props로 모달창으로 재전달 받아 필요한 정보들만 가공하여 렌더링
 
 ## 판매페이지 (현주)
 - 레이아웃 구현
