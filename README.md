@@ -12,7 +12,7 @@
 ## FE
 | 김진우 (Project Manager) | 소셜로그인 </br> 상품리스트페이지 </br> 마이페이지 </br> 결제페이지 | <a href="https://github.com/wecaners?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | --- | --- | --- |
-| 박정은 | [구현한 페이지 이름] | <a href=[깃허브 링크]><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
+| 박정은 | 네이게이션바 </br> 상세페이지 </br> 결제 페이지 </br> | <a href="https://github.com/jeong-eun-park><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 | 오현주 | 메인페이지 </br> 구매하기 입찰하기 모달창 </br> 판매등록 페이지 |  <a href="https://github.com/hyunjoo1130?tab=repositories"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/></a> |
 
 </br>
@@ -134,12 +134,22 @@
 - 입력하는 숫자가 천단위에 맞게 콤마가 찍히게 하기 위해, replaceAll 메서드와 toLocaleString('Ko-KR')로 입력값을 가공하여 실시간 변환 구현
 - 레이아웃 구현
 
-## 결제 페이지 (정은)
--
 ## 네비게이션바 (정은)
-- 
+- localStorage에서 토큰값 확인 후 로그인&로그아웃 상태 렌더링 
+- 로그인 상태에 따라 로그인 / 로그아웃 표출
+
 ## 상세페이지 (정은)
--
+- 리스트 페이지에서 해당 Id값을 가져와 데이터를 렌더링
+- 여러개의 이미지를 슬라이드 형태로 보여주는 캐러셀 구현
+- Nivo.rocks 라이브러리를 활용한 시세 데이터 시각화
+: 필터링으로 연도별 , 기간별 데이터 그래프 구현
+: UX 향상을 위해 마우스 커서가 그래프 주변으로 갈 경우 표출되는 거래 툴팁 커스텀
+
+
+## 결제 페이지 (정은)
+- date picker 라이브러리를 활용한 날짜선택 구현
+- user의 정보를 불러와서 렌더링
+
 
 </br>
 
